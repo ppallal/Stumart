@@ -1,3 +1,6 @@
+
+// incase of localhost , configure the below code according to your specifications
+
 <?php
   $conn_error ='Could not connect';
   $host='localhost';
