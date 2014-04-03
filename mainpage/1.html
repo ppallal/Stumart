@@ -38,7 +38,42 @@
   <body >
 		
 		<div id="backim" style="width:100%;height:700px;background-image:url('7.jpg');background-size:100% 700px;margin-top:0px;">
-		<div style="width:100%;height:500px;opacity:0.5;background-image:url('a2.jpg');margin-top:0px;"></div>
+		<!--div style="width:100%;height:500px;opacity:0.5;background-image:url('a2.jpg');margin-top:0px;"></div-->
+			<div class='note' style="position:absolute;left:50px;top:200px;border-radius:10px;box-shadow:3px 3px 8px #178d2a;background-color:#67c920;border-width:3px;border-color:white">'
+				<p style="margin:10px;">This iis a sliding post;</p>
+				
+			</div>
+			<div class='note' style="position:absolute;left:50px;top:400px;border-radius:10px;box-shadow:3px 3px 8px #178d2a;background-color:#67c920;border-width:3px;border-color:white">'
+				<p style="margin:10px;">Oh when the blues, <br/>
+				Oh when the blues, <br/>
+				Go marching in, <br/>
+				Go marching in, <br/>
+				Oh when the blues go marching in, <br/>
+				I wanna be this is number, <br/>
+				Oh when the blues go marching in... 
+			</p>
+			</div>
+			<div class='note' style="position:absolute;left:100px;top:300px;border-radius:10px;box-shadow:3px 3px 8px #178d2a;background-color:#67c920;border-width:3px;border-color:white">'
+				<p style="margin:10px;">This iis another sliding post;</p>
+			</div>
+			
+			<div class='notedown' style="position:absolute;right:150px;top:500px;width:100px; height:100px;border-radius:10px;box-shadow:3px 3px 8px #178d2a;background-color:#67c920;border-width:3px;border-color:white">'
+				<p>This iis a sliding post;</p>
+			</div>
+		
+		
+		
+		
+					
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		</div>
 		
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-radius:10px;box-shadow:3px 3px 8px #178d2a;margin:20px;background-color:#67c920;border-width:3px;border-color:white">
@@ -89,15 +124,56 @@
             });
 		$("#but").click(function () {
                 $('body,html').animate({ scrollTop: 0 }, 500);
+				document.getElementById('if').src='http://'+document.getElementById('search').value;
                 return false;
             });
 		$('#search').bind('keypress', function(e) {
 				var code = e.keyCode || e.which;
 				if(code == 13) { //Enter keycode
 					$('body,html').animate({ scrollTop: 0 }, 500);
+					document.getElementById('if').src='http://'+document.getElementById('search').value;
 					return false;
 				   //Do something
 			 }});
+		
+		$(document).ready(function(){
+			//while(true){	
+			setInterval	(function(){
+							$('.note').css('left','+=600px');
+							
+							setTimeout(function(){$('.note').animate({ left: '-=300px',display:'false',opacity:'1' }, 3000);},2);
+							setTimeout(function(){$('.note').animate({ left: '-=300px',display:'false',opacity:'0' }, 3000);},3400);
+							},7000)
+			
+			//$('.note').css('opacity','1200px');
+			//}
+		});
+		
+		
+		$(document).ready(function(){
+			//while(true){	
+			setInterval	(function(){
+							$('.notedown').css('top','-=400px');
+							
+							setTimeout(function(){$('.notedown').animate({ top: '+=200px',display:'false',opacity:'1' }, 3000);},2);
+							setTimeout(function(){$('.notedown').animate({ top: '+=200px',display:'false',opacity:'0' }, 3000);},3400);
+							},7000)
+			
+			//$('.note').css('opacity','1200px');
+			//}
+		});
+		
+		
+		
+		//$(".note").click(function () {
+          //      $('.note').animate({ left: '-100px',display:'false',opacity:'0' }, 500);
+            //    return false;
+            //});
+		
+	//	setInterval()
+			//$('.note').click((function){
+			//		$('.note').animate({left: '-100px';},500)
+			//	})
 	</script>
 	
 	<script src="js/bootstrap.min.js"></script>
