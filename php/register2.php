@@ -4,7 +4,7 @@ $username=$_POST["username"];
 $password=(md5($_POST["password"]));
 $query = "INSERT INTO `login` VALUES (NULL, '{$username}', '{$password}','{$UID}',CURRENT_TIMESTAMP)";
               
-	       // Not required for now, will see later, if needed to fetch UID, use the below code
+	       // Not required for now, will see later, if needed to fetch LoginID, use the below code
 			  
 	        if($query_run=mysql_query($query))
                 {
