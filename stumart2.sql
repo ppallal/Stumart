@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 27, 2014 at 05:57 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: 127.0.0.1
+-- Generation Time: Apr 04, 2014 at 10:33 PM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `stumart`
+-- Database: `stumart2`
 --
 
 -- --------------------------------------------------------
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `login` (
   `LoginID` int(11) NOT NULL AUTO_INCREMENT,
   `UID` int(11) NOT NULL,
   `Username` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `IsAdmin` tinyint(1) NOT NULL,
   `LastLoggedIn` datetime NOT NULL,
   PRIMARY KEY (`LoginID`),
