@@ -1,0 +1,215 @@
+<html lang="en">
+<body style="text-align:center" >
+
+<style type="text/css">
+    #wrapper {
+        width:450px;
+        margin:0 auto;
+        font-family:Verdana, sans-serif;
+    }
+    legend {
+        color:#0481b1;
+        font-size:16px;
+        padding:0 10px;
+        background:#fff;
+        -moz-border-radius:5px;
+        box-shadow: 0 1px 5px rgba(4, 129, 177, 0.5);
+        padding:5px 10px;
+        text-transform:uppercase;
+        font-family:Helvetica, sans-serif;
+        font-weight:bold;
+    }
+    fieldset {
+        border-radius:4px;
+	background: #fff; 
+        background: -moz-linear-gradient(#fff, #f9fdff);
+     	background: -o-linear-gradient(#fff, #f9fdff);
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#f9fdff)); /
+        background: -webkit-linear-gradient(#fff, #f9fdff);
+        padding:20px;
+		border: 1px solid #27931d;
+       border-color:#27931d;
+        //border-color:rgba(4, 129, 177, 0.4);
+    }
+    input,
+    textarea {
+        color: #373737;
+        background: #fff;
+        border: 1px solid #27931d;
+        color: #aaa;
+        font-size: 14px;
+        line-height: 1.2em;
+        margin-bottom:15px;
+
+        -moz-border-radius:4px;
+        -webkit-border-radius:4px;
+        border-radius:4px;
+        box-shadow: 0 1px 2px rgba(0, 255, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    input[type="search"],
+    input[type="search"],
+    input[type="search"],
+    input[type="search"],
+    input[type="text"],
+    input[type="text"],
+	input[type="file"],
+	input[type="text"]{
+        padding: 8px 6px;
+        height: 40px;
+        width:280px;
+    }
+    
+    
+    
+    input[type="search"]:focus,
+    input[type="search"]:focus,
+    input[type="search"]:focus,
+    input[type="search"]:focus,
+    input[type="text"]:focus,
+    input[type="text"]:focus,
+	input[type="file"]:focus,
+	input[type="text"]:focus{
+        background:#f5fcfe;
+        text-indent: 0;
+        z-index: 1;
+        color: #373737;
+        -webkit-transition-duration: 400ms;
+        -webkit-transition-property: width, background;
+        -webkit-transition-timing-function: ease;
+        -moz-transition-duration: 400ms;
+        -moz-transition-property: width, background;
+        -moz-transition-timing-function: ease;
+        -o-transition-duration: 400ms;
+        -o-transition-property: width, background;
+        -o-transition-timing-function: ease;
+        width: 380px;
+        
+        border-color:#27931d;
+        box-shadow:0 0 5px rgba(4, 129, 177, 0.5);
+        opacity:0.6;
+    }
+    input[type="submit"]{
+        background: #222;
+        border: none;
+        text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+        text-transform:uppercase;
+        color: #eee;
+        cursor: pointer;
+        font-size: 15px;
+        margin: 5px 0;
+        padding: 5px 22px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-border-radius:4px;
+        -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+        box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+    }
+    textarea {
+        padding:3px;
+        width:96%;
+        height:100px;
+    }
+    textarea:focus {
+        background:#ebf8fd;
+        text-indent: 0;
+        z-index: 1;
+        color: #373737;
+        opacity:0.6;
+        box-shadow:0 0 5px rgba(4, 129, 177, 0.5);
+        border-color:#ccc;
+    }
+    .small {
+        line-height:14px;
+        font-size:12px;
+        color:#999898;
+        margin-bottom:3px;
+    }
+</style>
+<body>
+    <div id="wrapper">
+
+
+
+<fieldset>
+<legend>Create Post:</legend>
+
+<!--<br>	
+<select name="Item Name">
+<option value="Item Name">Item Name</option>
+<option value="Books">Books</option>
+<option value="Materials">Materials</option>
+<option value="Notes">Notes</option>
+<option value="">Audi</option>
+
+</select>
+<br>
+<select name="Condition">
+<option value="Good">Good</option>
+<option value="Average">Average</option>
+<option value="Bad">Bad</option>
+</select>
+
+<br>
+<select name="YearOfPurchase">
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+</select>
+<br>
+<select name="Edition">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select><br>-->
+
+<div><input type='search' id="in" placeholder="Item Name" 	tabindex="1"  name="item" /></div>
+<div><input type='search' id="con" placeholder="Condition" 	tabindex="2" name="cond" /></div>
+<div> <input type='search'id = "yop" placeholder="Year of Purchase" tabindex="3" name="year"/>
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+</div>
+<div><input type='search' id="ed" placeholder="Edition" 	tabindex="4" name="ed" />
+
+</div>
+
+
+<a>If item name not listed create a new item:</a> 
+
+
+<div><input type='text' id="getinfo" placeholder="Item Name" 	tabindex="5" autocomplete="off"   /></div>
+<div><input type='text' id="author" placeholder="Author,Edition,Publications" 	tabindex="6" autocomplete="off"  /></div>
+<div> <input type='file'  tabindex="7" autocomplete="off"  /></div>
+<div><input type='text' id="add" placeholder="Additional info" 	tabindex="8" autocomplete="off" /></div>
+
+
+<br> <input type="submit" name="submit" value="SUBMIT"/></br>
+</fieldset>
+
+</body>
+</html>
