@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>
+Login page
+</title>
+</head>
+<body>
+<h1>
+Login Page
+</h1>
+
+
+<a href="goindex.html" target="right"><b>REGISTRATION</b></a>
+
+<form name="login">
+Username<input type="text" name="userid"/> <br>
+Password<input type="password" name="pswrd"/> <br>
+<input type="button" onclick="check(this.form)" value="Login"/>
+<input type="reset" value="Cancel"/>
+</form>
+
+
+<script language="javascript">
+function check(form)/*function to check userid & password*/
+{
+ /*the following code checkes whether the entered userid and password are matching*/
+ if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd")
+  {
+    window.open('target.html')/*opens the target page while Id & password matches*/
+  }
+ else
+ {
+   alert("Error Password or Username")/*displays error message*/
+  }
+}
+
+
+function validate_email()
+{
+	var email = document.getElementById("new");
+	var re = /\S+@\S+\.\S+/;
+	if(!re.test(email.value))
+	{
+		alert("Enter a valid email address");
+		email.value = "";
+	}
+       else
+         alert("Mail Sent");
+}
+
+
+
+function newInput()
+{
+var new_user = document.createElement("input");
+new_user.setAttribute("id","new");
+document.body.appendChild(new_user);
+var button1 = document.createElement("input");
+button1.setAttribute("type","button");
+button1.setAttribute("value","Send Mail");
+button1.setAttribute("onclick","validate_email()");
+document.body.appendChild(button1);
+
+}
+ 
+</script>
+
+<a href='javascript:newInput()' id = "demo"> Forgot Password </a>
+</body>
+</html>

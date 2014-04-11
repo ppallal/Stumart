@@ -1,0 +1,112 @@
+
+li.bullet {
+	font-size: 1em !important;
+}
+
+h3 {
+	border-bottom: 1px solid #66CC33;
+	color: #000099;
+	padding-bottom: 2px;	
+}
+
+h4, h5, h6 {
+	color: #08084d;
+}
+
+h5 {
+	font-size: 1.0em;
+	font-style: italic;
+	color: #a64311;
+}
+
+h4 {
+	padding-top: 15px;
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+samp, dl.methods dt {
+	font-size: 14px;
+	color: #a64311;
+	font-family: monospace;
+}
+
+dl {
+	margin-left: 10px;
+}
+
+dl dt {
+	margin: 0;
+	font-size: 14px;
+	font-style: italic;
+	color: #929292;
+}
+
+dl dd {
+	margin: 0;
+}
+
+dl dd p, dl dd ul {
+	margin-top: 0;
+	margin-bottom: 13px;
+}
+
+dl.revisions dt {
+	color: #08084d;
+	margin-top: 10px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+blockquote, .codeblock {
+	border: 1px solid #08084d;
+	background-color: #f2f2ff;
+	margin: 20px;
+	padding: 10px;
+}
+
+blockquote p, .codeblock p {
+	color: #000;
+}
+
+blockquote strong {
+	color: #08084d;
+}
+
+.codeblock h4 {
+	margin: 0;
+}
+
+.topmargin {
+	margin-top: 10px !important;
+}
+
+.download {
+	font-size: 14px;
+	padding-bottom: 20px;
+	font-weight: bold;
+}
+
+code, .code, samp, dl.methods dt {
+	color: #a64311;
+}
+
+samp {
+	color: #808080;
+}
+
+/* overrides bootstrap so plugins show correctly */
+label {
+	display: inline;
+}
+
+[id^="example-"] {
+	line-height: 22px;
+}
+
+/* AddThis style */
+.addthis {
+	margin: 8px;
+	float: right;
+}
+

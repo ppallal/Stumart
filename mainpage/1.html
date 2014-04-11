@@ -18,39 +18,67 @@
 	
 	<style>
 		.note{
+			font-color:white;
 			posotion:absolute;
 			margin:10px;
-			background: #58b705; /* Old browsers */
-			background: -moz-linear-gradient(top,  #58b705 0%, #67c920 57%, #4fa019 100%); /* FF3.6+ */
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#58b705), color-stop(57%,#67c920), color-stop(100%,#4fa019)); /* Chrome,Safari4+ */
-			background: -webkit-linear-gradient(top,  #58b705 0%,#67c920 57%,#4fa019 100%); /* Chrome10+,Safari5.1+ */
-			background: -o-linear-gradient(top,  #58b705 0%,#67c920 57%,#4fa019 100%); /* Opera 11.10+ */
-			background: -ms-linear-gradient(top,  #58b705 0%,#67c920 57%,#4fa019 100%); /* IE10+ */
-			background: linear-gradient(to bottom,  #58b705 0%,#67c920 57%,#4fa019 100%); /* W3C */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#58b705', endColorstr='#4fa019',GradientType=0 ); /* IE6-9 */
+			/*background: #58b705; /* Old browsers */
+			/*background: -moz-linear-gradient(top,  #58b705 0%, #67c920 57%, #4fa019 100%); /* FF3.6+ */
+			/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#58b705), color-stop(57%,#67c920), color-stop(100%,#4fa019)); /* Chrome,Safari4+ */
+			/*background: -webkit-linear-gradient(top,  #58b705 0%,#67c920 57%,#4fa019 100%); /* Chrome10+,Safari5.1+ */
+			/*background: -o-linear-gradient(top,  #58b705 0%,#67c920 57%,#4fa019 100%); /* Opera 11.10+ */
+			/*background: -ms-linear-gradient(top,  #58b705 0%,#67c920 57%,#4fa019 100%); /* IE10+ */
+			/*background: linear-gradient(to bottom,  #58b705 0%,#67c920 57%,#4fa019 100%); /* W3C */
+			/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#58b705', endColorstr='#4fa019',GradientType=0 ); /* IE6-9 */
 			border-style:solid;
 			border-width:1px;
 			/*border-color:#67c920;*/
 			border-color:white;
+			
+			background-size:100% 100%;
 
 
 			box-shadow:0px 0px 20px black;
 			border-radius:10px;
+			
+			float:left;
+			width:240px;
+			height:360px;
+			vertical-align:bottom;
 		}	
 		
 		.innote{
-			margin:10px;
+			/*position:absolute;
+			bottom:10px;
+			right:10px;
+			/*font-color:white;
+			*/margin:10px;
+			text-align:right;
+			
+		}
+		
+		.innotecon{
+			/*position:absolute;
+			*/bottom:0px;
+			right:0px;
+			color:white;
+			font-family:calibri;
+			margin:0px;
 		}
 		
 		.notewrapper{
+			opacity:0;
 			position:absolute;
-			top:200px;
-			left:50px;
+			top:150px;
+			left:-120px;
+			/*background:white;*/
+			width:800px;
+			height:500px;
 		}
 		
 	
 	
 		/*.note{
+			
 			margin:10px;
 			border-style:solid;
 			border-width:3px;
@@ -84,39 +112,73 @@
 		
 			
 	</script>
-	
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+
   </head>
   <body >
 		
-		<div id="backim" style="width:100%;height:700px;background-image:url('7.jpg');background-size:100% 700px;margin-top:0px;">
-		<!--div style="width:100%;height:500px;opacity:0.5;background-image:url('a2.jpg');margin-top:0px;"></div-->
+			<div id="wowslider-container1" style="z-index:-1;">
+				<div class="ws_images"><ul>
+						<li><img src="data1/images/14.jpg" alt="Any Time" title="Any Time" id="wows1_0"/></li>
+						<li><img src="data1/images/22.jpg" alt="Best Prices" title="Best Prices" id="wows1_1"/></li>
+						<li><img src="data1/images/21.jpg" alt="Convinience" title="Convinience" id="wows1_2"/></li>
+						<li><img src="data1/images/20.jpg" alt="Huge Range" title="Huge Range" id="wows1_3"/></li>
+						</ul></div>
+					<div class="ws_bullets"><div>
+					<a href="#" title="Any Time"><img src="data1/tooltips/14.jpg" alt="Any Time"/>1</a>
+					<a href="#" title="Best Prices"><img src="data1/tooltips/22.jpg" alt="Best Prices"/>2</a>
+					<a href="#" title="Convinience"><img src="data1/tooltips/21.jpg" alt="Convinience"/>3</a>
+					<a href="#" title="Huge Range"><img src="data1/tooltips/20.jpg" alt="Huge Range"/>4</a>
+					</div></div>
+			</div>
+
 			<div class="notewrapper">
 			
-			<div class='note' style="left:50px;top:200px;">
-				<div class="innote" ><p>This iis a sliding post;</p>
+				<div class='note' style="background-image:url('infer.jpg')">
+					<div class="innote" >
+						<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+						<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+						<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+						<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+						<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						<h3 class="innotecon" style="float:bottom;">Inferno</h3>
+						<p class="innotecon" style="float:bottom;">Dan Brown</p>
+						<h2 class="innotecon" style="float:bottom;">200 &#8377</h2>
+					</div>
 				</div>
-			</div>
-			<div class='note' style="left:50px;top:400px;">
-				<div class="innote">
-				<p >Oh when the blues, <br/>
-				Oh when the blues, <br/>
-				Go marching in, <br/>
-				Go marching in, <br/>
-				Oh when the blues go marching in, <br/>
-				I wanna be this is number, <br/>
-				Oh when the blues go marching in...
+		
+				<div class='note' style="background-image:url('harry.jpg')">
+			
+					<!--img src="3.jpg" style="width:100%;height:100%;border-radius:10px;"></img-->
+					<div class="innote">
+						<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+						<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+						<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+						<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+						
+						<div class="innote" >
+						
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						<h3 class="innotecon" style="float:bottom;">Harry Potter & The Order Of Phoenix</h3>
+						<p class="innotecon" style="float:bottom;">JK Rowling</p>
+						<h2 class="innotecon" style="float:bottom;">200 &#8377</h2>
+					</div>
+					</div>
 				</div>
-			</p>
-			</div>
 			<div class='note' style="left:100px;top:300px;">
 				<div class="innote">
-				<p >This iis another sliding post;</p>
+					<p >This iis another sliding post;</p>
 				</div>
 			</div>
 			
 		
-			</div>
 		
+		</div>
+			
+			
+			
 		
 			<div class='notedown note' style="position:absolute;right:150px;top:500px;width:100px; height:100px;">'
 				<p>This iis a sliding post;</p>
@@ -150,16 +212,80 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			  <form class="navbar-form navbar-left"  method="GET" action="index.html" target="if" role="search">
+			  <form class="navbar-form navbar-left"  method="GET" action="index.html" target="if" role="category">
 				<div class="form-group" >
-				  <input type="text" name="search" id="search" class="form-control" placeholder="Search" style="width:700px" >
+				  <input type="text" name="category" id="category" class="form-control" placeholder="search" style="width:700px" >
+				  <!--div class="mcdropdown"><input type="text" name="" id="" value="" autocomplete="off" style="width: 393px;"><a href="#" tabindex="-1"></a><input type="hidden" name="category" id="category" value=""></div>
+					<!------------------------------------------------->
+						<ul id="categorymenu" class="mcdropdown_menu" style="display:none">
+						  <li rel="1">
+							Arts &amp; Humanities
+							<ul>
+							  <li rel="2">
+								Photography
+								<ul>
+								  <li rel="3">
+									3D
+								  </li>
+								  <li rel="4">
+									Digital
+								  </li>
+								</ul>
+							  </li>
+							  <li rel="5">
+								History
+							  </li>
+							  <li rel="6">
+								Literature
+							  </li>
+							</ul>
+						  </li>
+						  <li rel="7">
+							Business &amp; Economy
+						  </li>
+						  <li rel="8">
+							Computers &amp; Internet
+						  </li>
+						  <li rel="9">
+							Education
+						  </li>
+						  <li rel="11">
+							Entertainment
+							<ul>
+							  <li rel="12">
+								Movies
+							  </li>
+							  <li rel="13">
+								TV Shows
+							  </li>
+							  <li rel="14">
+								Music
+							  </li>
+							  <li rel="15">
+								Humor
+							  </li>
+							</ul>
+						  </li>
+						  <li rel="10">
+							Health
+						  </li>
+						</ul>
+					
+					
+					
+					
+					
+					<!------------------------------------------------->
+					
+				  
+				  
 				</div>
 				<button type="submit" class="btn btn-default" id="but"><img src="search1.png" style="width:20px"></img></button>
 			  </form>
 			  <button type="button" class="btn btn-default navbar-btn navbar-right" onclick="ne(false);">Prev</button>
 			  <button type="button" class="btn btn-default navbar-btn navbar-right" onclick="ne(true);">Next</button>
-			  <button type="button" class="btn btn-default navbar-btn navbar-right">Log In</button>
-			  <button type="button" class="btn btn-default navbar-btn navbar-right">Sign Up</button>
+			  <button type="button" class="btn btn-default navbar-btn navbar-right" >Log In</button>
+			  <button id="signup" type="button" class="btn btn-default navbar-btn navbar-right" onclick="document.getElementById('if').src='Login/goindex.html'">Sign Up</button>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
@@ -176,36 +302,50 @@
     
 	
 	<script>
+		scflag=false;
 		$("#if").load(function () {
+				if(scflag)
                 $('body,html').animate({ scrollTop: $('body').height() }, 500);
                 return false;
             });
 		$("#but").click(function () {
                 $('body,html').animate({ scrollTop: 0 }, 500);
-				document.getElementById('if').src='http://'+document.getElementById('search').value;
+				//document.getElementById('if').src='http://'+document.getElementById('category').value;
                 return false;
             });
-		$('#search').bind('keypress', function(e) {
+		$("button").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 500);
+				//document.getElementById('if').src='http://'+document.getElementById('category').value;
+                return false;
+            });
+		$(":submit").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 500);
+				//document.getElementById('if').src='http://'+document.getElementById('category').value;
+                return false;
+            });
+		$('#category').bind('keypress', function(e) {
 				var code = e.keyCode || e.which;
 				if(code == 13) { //Enter keycode
 					$('body,html').animate({ scrollTop: 0 }, 500);
-					document.getElementById('if').src='http://'+document.getElementById('search').value;
+					document.getElementById('if').src='http://'+document.getElementById('category').value;
 					return false;
 				   //Do something
 			 }});
+		
+		$(document).click(function(){scflag=true;})
 		
 		$(document).ready(function(){
 			//while(true){	
 			setInterval	(function(){
 							
-							setTimeout(function(){$('.notewrapper').css('left','+=600px');},1);
+							setTimeout(function(){$('.notewrapper').css('left','+=400px');},1);
 							
-							setTimeout(function(){$('.notewrapper').animate({ opacity:'1' }, {duration:1000,queue:false});},402);
-							setTimeout(function(){$('.notewrapper').animate({ left: '-=300px' }, {duration:3000,queue:false});},2);
+							setTimeout(function(){$('.notewrapper').animate({ opacity:'1' }, {duration:300,queue:false});},1000-300-150);
+							setTimeout(function(){$('.notewrapper').animate({ left: '-=200px' }, {duration:1000,queue:false});},2);
 							
-							setTimeout(function(){$('.notewrapper').animate({ left: '-=300px' }, {duration:3000,queue:false});},3400);
-							setTimeout(function(){$('.notewrapper').animate({ opacity:'0' }, {duration:1000,queue:false});},5000);
-							},7000)
+							setTimeout(function(){$('.notewrapper').animate({ left: '-=200px' }, {duration:1000,queue:false});},4000);
+							setTimeout(function(){$('.notewrapper').animate({ opacity:'0' }, {duration:300,queue:false});},4000+150);//5000-120-300);
+							},5010)
 			
 			//$('.note').css('opacity','1200px');
 			//}
@@ -215,14 +355,21 @@
 		
 		
 		
+		
+		
+		
+		
 		$(document).ready(function(){
 			//while(true){	
 			setInterval	(function(){
-							$('.notedown').css('top','-=400px');
+							setTimeout(function(){$('.notedown').css('top','-=400px');},1);
 							
-							setTimeout(function(){$('.notedown').animate({ top: '+=200px',display:'false',opacity:'1' }, 3000);},5);
-							setTimeout(function(){$('.notedown').animate({ top: '+=200px',display:'false',opacity:'0' }, 3000);},6500);
-							},10000)
+							setTimeout(function(){$('.notedown').animate({ opacity:'1' }, {duration:300,queue:false});},1000-300);
+							setTimeout(function(){$('.notedown').animate({ top: '+=200px' }, {duration:1000,queue:false});},2);
+							
+							setTimeout(function(){$('.notedown').animate({ top: '+=200px' }, {duration:1000,queue:false});},4000);
+							setTimeout(function(){$('.notedown').animate({ opacity:'0' }, {duration:300,queue:false});},4000);//5000-520-300);
+							},6000)
 			
 			//$('.note').css('opacity','1200px');
 			//}
@@ -233,6 +380,30 @@
 		
 	</script>
 	
+	
+	<script>
+	
+		var dd = $("#mcdropdown").mcDropdown();
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function (){
+		  $("#category").mcDropdown("#categorymenu");
+		});
+	</script>
+	
+	
+	<script type="text/javascript" src="engine1/wowslider.js"></script>
+	<script type="text/javascript" src="engine1/script.js"></script>
+	
+	
+	<script type="text/javascript" src="./lib/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="./lib/jquery.mcdropdown.js"></script>
+	<script type="text/javascript" src="./lib/jquery.bgiframe.js"></script>
+
+<!---// load the mcDropdown CSS stylesheet //--->
+<link type="text/css" href="./css/jquery.mcdropdown.css" rel="stylesheet" media="all" />
+	
 	<script src="js/bootstrap.min.js"></script>
+
   </body>
 </html>
