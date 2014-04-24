@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Apr 09, 2014 at 05:01 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: 127.0.0.1
+-- Generation Time: Apr 24, 2014 at 05:47 PM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -115,6 +115,20 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `softcopies`
+--
+
+CREATE TABLE IF NOT EXISTS `softcopies` (
+  `CopyID` int(11) NOT NULL AUTO_INCREMENT,
+  `Images` text NOT NULL,
+  `Description` text NOT NULL,
+  `Title` text NOT NULL,
+  PRIMARY KEY (`CopyID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transactionlog`
 --
 
@@ -140,6 +154,8 @@ CREATE TABLE IF NOT EXISTS `useraccount` (
   `USN` varchar(30) NOT NULL,
   `Email` varchar(30) NOT NULL,
   `Phone` bigint(20) NOT NULL,
+  `Security Question` text NOT NULL,
+  `Security Answer` text NOT NULL,
   `Photo` text NOT NULL,
   `Timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`UID`)
