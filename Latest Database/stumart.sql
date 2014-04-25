@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2014 at 05:47 PM
+-- Generation Time: Apr 25, 2014 at 11:01 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -44,14 +44,21 @@ CREATE TABLE IF NOT EXISTS `login` (
   `LoginID` int(11) NOT NULL AUTO_INCREMENT,
   `UID` int(11) NOT NULL,
   `Username` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `IsAdmin` tinyint(1) NOT NULL,
   `LastLoggedIn` datetime NOT NULL,
   PRIMARY KEY (`LoginID`),
   UNIQUE KEY `UID` (`UID`),
   KEY `UID_2` (`UID`),
   KEY `UID_3` (`UID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`LoginID`, `UID`, `Username`, `Password`, `IsAdmin`, `LastLoggedIn`) VALUES
+(2, 2, 'qwertyu', 'e86fdc2283aff4717103f2d44d0610f7', 0, '2014-04-25 14:29:16');
 
 -- --------------------------------------------------------
 
@@ -154,12 +161,19 @@ CREATE TABLE IF NOT EXISTS `useraccount` (
   `USN` varchar(30) NOT NULL,
   `Email` varchar(30) NOT NULL,
   `Phone` bigint(20) NOT NULL,
-  `Security Question` text NOT NULL,
-  `Security Answer` text NOT NULL,
+  `SecurityQ` text NOT NULL,
+  `SecurityAns` text NOT NULL,
   `Photo` text NOT NULL,
   `Timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`UID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `useraccount`
+--
+
+INSERT INTO `useraccount` (`UID`, `FirstName`, `LastName`, `USN`, `Email`, `Phone`, `SecurityQ`, `SecurityAns`, `Photo`, `Timestamp`) VALUES
+(2, 'qqqqqq', 'qqqqq', 'qqqq', 'q@g.c', 121212, 'w12ws2e', '2E2EE 3E3WE', '', '2014-04-25 08:59:01');
 
 --
 -- Constraints for dumped tables
