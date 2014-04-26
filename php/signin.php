@@ -1,7 +1,9 @@
 
 <?php
+session_start();
 require'connect.php';
 $username=$_POST["username"];
+$_SESSION['username'] = $username;
 $password=(md5($_POST["password"]));
 $query = "SELECT LoginID FROM login WHERE Username = '{$username}' and Password='{$password}'";
 
