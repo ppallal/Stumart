@@ -128,7 +128,7 @@
                require 'connect.php';
               
 
-                $secq=$_GET['secq'];
+                $secq=mysql_real_escape_string($_GET['secq']);
                 $uid=intval($_GET['n']);
 														
 					echo "<h3>The Security Question is: ";

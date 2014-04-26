@@ -1,7 +1,7 @@
 <?php
 require'connect.php';
-$email=$_POST["email"];
-echo $email;
+$email=mysql_real_escape_string($_POST["email"]);
+//echo $email;
 //echo $password;
 $query = "SELECT  SecurityQ, UID FROM useraccount WHERE Email = '{$email}' ";
 
