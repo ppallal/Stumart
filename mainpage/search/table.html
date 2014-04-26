@@ -1,0 +1,28 @@
+<html>
+	<body>
+		<script type = "text/javascript">
+			function search()
+			{
+				var x = 10;
+				tab = document.createElement("table");
+				tab.border = "1px";
+				document.body.appendChild(tab);
+				for(i = 0; i < 10/3; i++)
+				{
+					tr = document.createElement("tr");
+					tab.appendChild(tr);
+					for(j = 0; j < 3; j++)
+					{
+						td = document.createElement("td");
+						td.value = j;
+						tr.appendChild(td);
+
+					}
+				}
+				
+			}
+
+		</script>
+		<button >Submit</button>
+	</body>
+</html>

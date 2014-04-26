@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Personal Info</title>
+</head>
+<body>
+<h1 align="center">PERSONAL INFO</h1>
+<img border="0" src="/home/ubuntu/Desktop/index.jpeg" alt="NO IMAGE FOUND" width="200" height="300">
+<p>
+<a href="http://www.facebook.com/yashkr.99">facebook</a>
+</p>
+<p>
+<a href="http://www.linkedin.com/yashkr.99">Linkedin</a>
+</p>
+<p>
+<b>Name</b>: YASH KUMAR<br>
+<b>DOB</b>:  22.09.1994<br>
+<b>Address</b>: #28, 6TH MAIN 4TH CROSS, DWARKANAGAR, BANGALORE - 560085<br>
+<b>Phone</b>: 8553575094<br>
+<b>Email-ID</b>: yashkr.99@gmail.com<br>
+</p>
+</body>
+</html>
