@@ -1,0 +1,191 @@
+<html>
+	
+<body>
+	<!-- HTML for SEARCH PASTE -->
+	<style type="text/css">
+		.tftextinput2
+		{
+			margin: 0;
+			padding: 4px 15px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size:14px;
+			color:#666;
+			border:1px solid #0076a3; border-right:0px;
+			border-top-left-radius: 5px 5px;
+			border-bottom-left-radius: 5px 5px;
+		}
+		.sort
+		 {
+			  position: relative;
+			  width : 250px;
+			  height : 450px;
+			  left : 100px;
+		}
+		.image1
+		{
+        position: absolute;
+        width: 250px;
+        height: 300px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+	span{
+    display:inline-block;
+    margin:0 30px;
+	}
+	.rate
+	{
+		height : 20px;
+		width : 20px;
+	}
+	.rating
+	{
+		width : 30px;
+		height : 20px;
+	}
+	.div2
+	{
+			position:absolute;
+			width:220px;
+			padding:15px;
+			background-color : #E8E8E8;
+			opacity : 0.7;
+			bottom : 55px;
+			border : 2px solid;
+			border : 1px solid #B0B0B0;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+	}
+	.div3
+	{
+		position:absolute;
+		bottom:160px;
+		width: 250px;
+		height : 80px;
+		color:black;
+		background-color:#33FF00;
+		opacity:0.6;
+		font-weight:bold;
+        font-size:13px;
+	}
+	</style>
+	<script src="jquery-1.11.0.min.js" >
+	</script>
+	<script type = "text/javascript">
+				var Array_books = new Array(); 
+				// fields of the object Book are values returned on querying database
+				var visit = 0;
+		function search_books()
+		{
+			if( visit == 0)
+			{
+			// get list of books and its details.. and create an object for each and puts them in an Array
+				var x = document.getElementById("search");
+				var d = document.getElementById("div_node");
+					Array_books[0] = new Book("book1.gif", "Engineering Mathematics", "400", "Grewal","poor");
+					Array_books[1] = new Book("book2.gif", "Engineering Mathematics", "600", "Grewal","excellent");
+					Array_books[2] = new Book("book1.gif", "Engineering Mathematics", "400", "Grewal","good");
+					Array_books[3] = new Book("book2.gif", "Engineering Mathematics", "600", "Grewal","very good");
+					
+					
+				var outer = document.createElement("div");
+				outer.innerHTML = "";
+				document.body.appendChild(outer);
+				if(Array_books.length == 0)
+					outer.innerHTML += "<center><h4 top = \"50px\"> No matches found </h4><center>";
+
+				for(var i in Array_books)
+				{
+					
+					var image = Array_books[i].image;
+					sp = document.createElement("span");
+					div_ele = document.createElement("div");
+					div2 = document.createElement("div");
+					div2.setAttribute("class","div2");
+					div_ele.setAttribute("onclick","more_details(event)");
+					div_ele.setAttribute("class","sort");
+					//$(div_ele).hover(on_hover(this,Array_books[i],i),off_hover(this,Array_books[i],i));
+					div_ele.setAttribute("onmouseover","on_hover(this, Array_books["+i+"],"+i+");");
+					div_ele.setAttribute("onmouseout","off_hover(this, Array_books["+i+"],"+i+");");
+					div_ele.innerHTML = "<s href='post.php?postid='><img src = \""+image+"\" class = \"image1\"></a>";
+					var condition = Array_books[i].book_cond;
+					num_stars = 0;
+					stars = "";
+					//alert(condition);
+					if(condition == "very poor")
+					{
+						num_stars = 0;
+					}
+					else if(condition  == "poor")
+						num_stars = 1;
+					else if(condition == "good")
+						num_stars = 2;
+					else if(condition == "very good")
+						num_stars = 3;
+					else if(condition == "excellent")
+						num_stars = 4;
+					
+					for(j=0; j < num_stars; j++)
+					{
+							stars += "<img src = \"full_star.png\" class = \"rate\"/>";
+					}
+					for(j = num_stars; j < 4; j++)
+					{
+							stars += "<img src = \"empty_star.png\" class = \"rate\"/>";
+					}
+					//alert(stars);
+					div2.innerHTML = "<b>Price : Rs."+Array_books[i].book_price+"</br>Rating :"+stars+"</b>";
+					div_ele.appendChild(div2);
+					sp.appendChild(div_ele);
+					outer.appendChild(sp);
+				}
+				visit++;
+			}				
+			
+		}
+		function Book(img_name, name, price, author, cond) // include post id
+		{
+			this.image = img_name;
+			this.book_name = name;
+			this.book_price = price;
+			this.book_author = author;
+			this.book_cond = cond;
+		}
+		function more_details(e)
+		{
+		//	alert(e);
+		}
+		function on_hover(div_ele, Array_book, i)
+					  {
+					  		//alert(i);
+							var y = document.createElement("div");
+							y.setAttribute("class","div3");
+							y.innerHTML = "<center><h2>"+Array_book.book_name+"</br>"+Array_book.book_author+"</h2></b></center></br>";
+							y.id = i.toString();
+							div_ele.appendChild(y);
+							
+						}
+			function off_hover(div_ele, Array_book, i)
+						{
+							var y = div_ele.childNodes;
+							for(x in y)
+							{
+								if(y[x].id == i.toString())
+								{
+									div_ele.removeChild(y[x])									
+								}
+							}
+					  }
+	</script>
+	
+</body>
+	<div id = "search">
+		<input type="text" id="query" class="tftextinput2" size="21" maxlength="120" placeholder="Search our website">
+		<input type="submit" value="Search" onclick = "javascript : search_books()">
+		<hr>
+	</div>
+</html>

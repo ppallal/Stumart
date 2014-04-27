@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Stu-Mart</title>
+
+		<!------------------------------------------------------- CSS -------------------------------------------------------->
+		
+		
+		<!------------------ Bootstrap -------------------->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+		<!------------------ Custom CSS -------------------->
+		<link href="css/2.css" rel="stylesheet">
+		
+		<!------------------ Carousel CSS -------------------->
+		<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+
+		<!------------------ Dropdown CSS -------------------->
+		<link type="text/css" href="./css/jminmc.css" rel="stylesheet" media="all" />
+		
+		
+		
+		<!------------------------------------------------------- SCRIPT -------------------------------------------------------->
+		
+		<!------------------ JQuery -------------------->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		
+		<!------------------ Bootstrap -------------------->
+		<script src="js/bootstrap.min.js"></script>
+
+		<!------------------ Dropdown Includes -------------------->
+		<script type="text/javascript" src="./lib/jquery.mcdropdown.js"></script>
+		<script type="text/javascript" src="./lib/jquery.bgiframe.js"></script>
+		
+		<!------------------ Carousel Includes -------------------->
+		<script type="text/javascript" src="engine1/wowslider.js"></script>
+		<script type="text/javascript" src="engine1/script.js"></script>
+		
+		
+		
+		<!------------------ Dropdown -------------------->
+		<script type="text/javascript">
+				
+			$("#mcdropdown").mcDropdown($("#categorymenu"));
+			var dd = $("#mcdropdown").mcDropdown();
+		
+			$(document).ready(function (){
+			  $("#category").mcDropdown("#categorymenu");
+			});
+			
+		</script>
+		
+		
+		
+		
+		<!------------------ AJAX for Dropdown -------------------->
+		<script type="text/javascript" src="./2/ajax.js"></script>
+		
+		
+		
+		
+		
+		
+		
+	
+	
+		<script>
+			function rem()
+			{	
+				//alert()
+				var a=document.getElementById("remm");
+				var t=a.firstChild;
+				while (t.nodeType!=1)
+				  {
+				  t=t.nextSibling;
+				  }
+				//alert(t.style);
+				t.removeAttribute("style")
+			}
+		
+		</script>
+	
+		
+	</head>
+	
+	
+	
+	
+	
+<!---------------------------------------------------------------------------------- BODY -------------------------------------------------------------------------------->
+	
+	
+	<body onload="rem();ajax1()//setTimeout(rem,200);" >
+		
+
+		<!------------------ Carousel -------------------->
+		<div id="wowslider-container1" style="z-index:-1;">
+			<div class="ws_images"><ul>
+					<li><img src="data1/images/14.jpg" alt="Any Time" title="Any Time" id="wows1_0"/></li>
+					<li><img src="data1/images/22.jpg" alt="Best Prices" title="Best Prices" id="wows1_1"/></li>
+					<li><img src="data1/images/21.jpg" alt="Convinience" title="Convinience" id="wows1_2"/></li>
+					<li><img src="data1/images/20.jpg" alt="Huge Range" title="Huge Range" id="wows1_3"/></li>
+				</ul></div>
+			<div class="ws_bullets"><div>
+				<a href="#" title="Any Time"><img src="data1/tooltips/14.jpg" alt="Any Time"/>1</a>
+				<a href="#" title="Best Prices"><img src="data1/tooltips/22.jpg" alt="Best Prices"/>2</a>
+				<a href="#" title="Convinience"><img src="data1/tooltips/21.jpg" alt="Convinience"/>3</a>
+				<a href="#" title="Huge Range"><img src="data1/tooltips/20.jpg" alt="Huge Range"/>4</a>
+			</div></div>
+		</div>
+			
+			
+		
+
+		<!------------------ Notification -------------------->
+		<div class="notewrapper">
+			<div class='note' id="note1" style="background-image:url('infer.jpg')">
+				<div class="innote" >
+					<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+					<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+					<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+					<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+					<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+					<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+					<h3 class="innotecon" style="float:bottom;">Inferno</h3>
+					<p class="innotecon" style="float:bottom;">Dan Brown</p>
+					<h2 class="innotecon" style="float:bottom;">200 &#8377</h2>
+				</div>
+			</div>
+		
+			<div class='note' style="background-image:url('harry.jpg')">
+				<div class="innote">
+					<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+					<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+					<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+					<span class="glyphicon glyphicon-star" style="color:white;float:right"></span>
+					<div class="innote" >
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						<h3 class="innotecon" style="float:bottom;">Harry Potter & The Order Of Phoenix</h3>
+						<p class="innotecon" style="float:bottom;">JK Rowling</p>
+						<h2 class="innotecon" style="float:bottom;">200 &#8377</h2>
+					</div>
+				</div>
+			</div>
+			<div class='note' style="left:100px;top:300px;">
+				<div class="innote">
+					<p >This iis another sliding post;</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class='notedown note' style="position:absolute;right:150px;top:500px;width:100px; height:100px;">'
+			<p>This iis a sliding post;</p>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-radius:10px;box-shadow:3px 3px 8px #178d2a;margin:20px;background-color:#67c920;border-width:3px;border-color:white;/*height:40px;*/">
+		  <!--67c920;44CE65;shadow:178d2a-->
+		 <div class="container-fluid" >
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a style="color:white" class="navbar-brand" href="#">Stu-Mart</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <form class="navbar-form navbar-left"  method="GET" action="index.html" target="if" role="category">
+				<div class="form-group" id="remm" onload="rem(this)">
+				
+				
+				
+				
+				
+				
+				<input type="text" name="category" id="category" class="form-control" placeholder="search" style="width:700px">
+				<ul id="categorymenu" class="mcdropdown_menu"></ul>
+				
+				
+				
+				</div>
+				<button type="submit" class="btn btn-default" id="but"><img src="search1.png" style="width:20px"></img></button>
+			  </form>
+			  
+			  <!--button type="button" class="btn btn-default navbar-btn navbar-right" >Log In</button>
+			  <button id="signup" type="button" class="btn btn-default navbar-btn navbar-right" onclick="document.getElementById('if').src='Login/goindex.html'">Sign Up</button>
+<!--Logged in-->
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="goup" href="Manageposts" target="if">ManagePosts</a></li>
+					<li><a class="goup" href="profile.html" target="if"><span id="username">username</span></a></li>
+					<li><img class="goup" id="usrimg" src="harry.jpg" style="margin:5px;height:39px;border-radius:5px;" onclick="document.getElementById('if').src='profile.html'"></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	
+		<div id="ifdiv" style="position:absolute;width:100%;min-height:100%;top:700px;"> 
+		<iframe style="width:90%;margin:5%;margin-top:8%;min-height:80%;border:none;" id="if" name ="if" src="index.html">
+		</iframe>
+		</div>
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!------------------ Notification Scripts -------------------->
+		<script>
+		
+			scflag=false;
+			
+			function goupf() 
+			{
+					$('body,html').animate({ scrollTop: 0 }, 500);
+					return false;
+			}
+			
+			$("#if").load(function () {
+					if(scflag)
+					$('body,html').animate({ scrollTop: $('body').height() }, 500);
+					return false;
+				});
+				
+			$("#but").click(function () {
+					goupf();
+					$('body,html').animate({ scrollTop: 0 }, 500);
+					document.getElementById('if').src='../PS/client_search.php?search='+document.getElementById('category').value;
+					//alert(document.getElementById('if').src);
+					return false;
+				});
+					
+			$("button").click(function () { scflag=true; return goupf(); });
+			$(":submit").click(goupf);
+			$(".goup").click(goupf);
+				
+				
+			$('#category').bind('keypress', function(e) {
+					var code = e.keyCode || e.which;
+					if(code == 13) { 
+						goupf();
+						document.getElementById('if').src='http://'+document.getElementById('category').value;
+						return false;
+					}
+				});
+			
+			$('.form-control').bind('keypress', function(e) {
+					var code = e.keyCode || e.which;
+					if(code == 13) { 
+						goupf();
+						document.getElementById('if').src='http://'+document.getElementById('category').value;
+						return false;
+					}
+				});
+			
+			$('#categorymenu').bind('keypress', function(e) {
+					var code = e.keyCode || e.which;
+					if(code == 13) { 
+						goupf();
+						document.getElementById('if').src='http://'+document.getElementById('category').value;
+						return false;
+					}
+				});
+				
+			$("body").click(function(){scflag=true;})
+			
+			//----------------------------- Slider------------------------
+			
+			
+			
+			$(document).ready(function(){
+				setInterval	(function(){
+					setTimeout(function(){$('.notewrapper').css('left','+=400px');},1);
+					//$('.notewrapper').css('left','+=400px');
+					setTimeout(function(){$('.notewrapper').animate({ opacity:'1' }, {duration:300,queue:false});},1000-300-150);
+					setTimeout(function(){$('.notewrapper').animate({ left: '-=200px' }, {duration:1000,queue:false});},2);
+					setTimeout(function(){$('.notewrapper').animate({ left: '-=200px' }, {duration:1000,queue:false});},4000);
+					setTimeout(function(){$('.notewrapper').animate({ opacity:'0' }, {duration:300,queue:false});},4000+150);//5000-120-300);
+					},5010);	
+				});
+			
+					
+			$(document).ready(function(){
+				setInterval	(function(){
+					setTimeout(function(){$('.notedown').css('top','-=400px');},1);
+					//$('.notedown').css('top','-=400px');
+					setTimeout(function(){$('.notedown').animate({ opacity:'1' }, {duration:300,queue:false});},1000-300);
+					setTimeout(function(){$('.notedown').animate({ top: '+=200px' }, {duration:1000,queue:false});},2);
+					setTimeout(function(){$('.notedown').animate({ top: '+=200px' }, {duration:1000,queue:false});},4000);
+					setTimeout(function(){$('.notedown').animate({ opacity:'0' }, {duration:300,queue:false});},4000);//5000-520-300);
+					},6000)
+				});
+
+		</script>	
+		
+		
+		
+				<!------------------ Carousel Includes -------------------->
+		<script type="text/javascript" src="engine1/wowslider.js"></script>
+		<script type="text/javascript" src="engine1/script.js"></script>
+		
+	</body>
+	
+</html>

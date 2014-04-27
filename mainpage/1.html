@@ -93,7 +93,66 @@
 		
 		
 	</style>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	
+	<script type="text/javascript" src="./lib/jquery.mcdropdown.js"></script>
+	<script type="text/javascript" src="./lib/jquery.bgiframe.js"></script>
+	
+	
+	<script type="text/javascript">
+	
+	
+	
+		
+		op={
+			openFx: "slideDown"          // the fx to use for showing the root menu
+			, openSpeed: 250               // the speed of the openFx
+			, closeFx: "slideUp"           // the fx to use for hiding the root menu
+			, closeSpeed: 250              // the speed of the closeFx
+			, hoverOverDelay: 200          // the delay before opening a submenu
+			, hoverOutDelay: 0             // the delay before closing a submenu
+			, showFx: "show"               // the fx to use when showing a submenu
+			, showSpeed: 0                 // the speed of the showFx
+			, hideFx: "hide"               // the fx to use when closing a submenu
+			, hideSpeed: 0                 // the speed of the hideFx
+			, dropShadow: true             // determine whether drop shadows should be shown
+										   // on the submenus
+			, valueAttr: "innerHTML"             // the attribute that contains the value to use in
+                                   // the hidden field
+			, click: function () {	
+				alert();
+			
+                $('body,html').animate({ scrollTop: 0 }, 500);
+				document.getElementById('if').src='http://'+document.getElementById('category').value;
+				//alert(document.getElementById('category').value)
+                return false;
+            }
+		                  // callback that occurs when the user clicks on a
+                                   
+		   , select: function () {	
+				alert();
+			
+                $('body,html').animate({ scrollTop: 0 }, 500);
+				document.getElementById('if').src='http://'+document.getElementById('category').value;
+				//alert(document.getElementById('category').value)
+                return false;
+            }
+		                  // callback that occurs when the user clicks on a
+                                   // menu item
+		}
+	
+	
+		$("#mcdropdown").mcDropdown($("#categorymenu"),op);
+		var dd = $("#mcdropdown").mcDropdown();
+	
+		$(document).ready(function (){
+		  $("#category").mcDropdown("#categorymenu");
+		});
+	</script>
 	
 	<script>
 	//testing
@@ -112,11 +171,57 @@
 		
 			
 	</script>
+	
+	
+	
+	
+	
+	<script>
+	
+		function updatelist(list)
+		{
+			
+			
+		}
+	
+		function ajax1(search){
+			xmlhttp=new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function(){
+				//alert(xmlhttp.readyState+ xmlhttp.status)
+				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+				{
+					//alert("response="+xmlhttp.responseText);
+					list=xmlhttp.responseText;
+					var ob=document.getElementById("categorymenu");
+					var l=list.split(";")
+					//alert("upar"+l)
+					var x=""
+					for (var i in l)
+					{
+						x+="<li rel="+l[i]+">"+l[i]+"<\li>"
+						
+					}
+					ob.innerHTML=x;
+					
+					
+				}
+			};
+			//alert("ent")
+			xmlhttp.open("GET","../search.php?search=",true);
+			xmlhttp.send();
+		
+		}
+	
+	</script>
+	
+	
+	
+	
 	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
-	<script type="text/javascript" src="engine1/jquery.js"></script>
+	<!--script type="text/javascript" src="engine1/jquery.js"></script-->
 
   </head>
-  <body >
+  <body onload="rem();ajax1()//setTimeout(rem,200);">
 		
 			<div id="wowslider-container1" style="z-index:-1;">
 				<div class="ws_images"><ul>
@@ -196,7 +301,7 @@
 		
 		</div>
 		
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-radius:10px;box-shadow:3px 3px 8px #178d2a;margin:20px;background-color:#67c920;border-width:3px;border-color:white">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-radius:10px;box-shadow:3px 3px 8px #178d2a;margin:20px;background-color:#67c920;border-width:3px;border-color:white;/*height:40px;*/">
 		  <!--67c920;44CE65;shadow:178d2a-->
 		  <div class="container-fluid" >
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -213,67 +318,26 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  <form class="navbar-form navbar-left"  method="GET" action="index.html" target="if" role="category">
-				<div class="form-group" >
-				  <input type="text" name="category" id="category" class="form-control" placeholder="search" style="width:700px" >
-				  <!--div class="mcdropdown"><input type="text" name="" id="" value="" autocomplete="off" style="width: 393px;"><a href="#" tabindex="-1"></a><input type="hidden" name="category" id="category" value=""></div>
-					<!------------------------------------------------->
-						<ul id="categorymenu" class="mcdropdown_menu" style="display:none">
-						  <li rel="1">
-							Arts &amp; Humanities
-							<ul>
-							  <li rel="2">
-								Photography
-								<ul>
-								  <li rel="3">
-									3D
-								  </li>
-								  <li rel="4">
-									Digital
-								  </li>
-								</ul>
-							  </li>
-							  <li rel="5">
-								History
-							  </li>
-							  <li rel="6">
-								Literature
-							  </li>
-							</ul>
-						  </li>
-						  <li rel="7">
-							Business &amp; Economy
-						  </li>
-						  <li rel="8">
-							Computers &amp; Internet
-						  </li>
-						  <li rel="9">
-							Education
-						  </li>
-						  <li rel="11">
-							Entertainment
-							<ul>
-							  <li rel="12">
-								Movies
-							  </li>
-							  <li rel="13">
-								TV Shows
-							  </li>
-							  <li rel="14">
-								Music
-							  </li>
-							  <li rel="15">
-								Humor
-							  </li>
-							</ul>
-						  </li>
-						  <li rel="10">
-							Health
-						  </li>
-						</ul>
-					
-					
-					
-					
+				<div class="form-group" id="remm" onload="rem(this)">
+				  <input type="text" name="category" id="category" class="form-control" placeholder="search" style="width:700px">
+
+
+
+
+
+
+			<!--input type="text" name="category" id="category" value="" /-->
+
+			<ul id="categorymenu" class="mcdropdown_menu">
+				<li rel="Arts &amp; Humanities"> Arts &amp; Humanities </li>
+				<li rel="pallal.tk"> google.com </li>
+				
+				<li rel="Birthdays"> Birthdays </li>
+				<li rel="Birth"> Birth </li>
+				<li rel="birst"> birst </li>
+				<li rel="pallal.tk"> pallal.tk </li>
+			</ul>
+
 					
 					<!------------------------------------------------->
 					
@@ -282,24 +346,106 @@
 				</div>
 				<button type="submit" class="btn btn-default" id="but"><img src="search1.png" style="width:20px"></img></button>
 			  </form>
-			  <button type="button" class="btn btn-default navbar-btn navbar-right" onclick="ne(false);">Prev</button>
-			  <button type="button" class="btn btn-default navbar-btn navbar-right" onclick="ne(true);">Next</button>
-			  <button type="button" class="btn btn-default navbar-btn navbar-right" >Log In</button>
+			  <!--button type="button" class="btn btn-default navbar-btn navbar-right" onclick="ne(false);">Prev</button>
+			  <button type="button" class="btn btn-default navbar-btn navbar-right" onclick="ne(true);">Next</button-->
+			  
+<!--Logged Out-->			  
+			  <!--button type="button" class="btn btn-default navbar-btn navbar-right" >Log In</button>
 			  <button id="signup" type="button" class="btn btn-default navbar-btn navbar-right" onclick="document.getElementById('if').src='Login/goindex.html'">Sign Up</button>
+<!--Logged in-->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="goup" href="Manageposts" target="if">ManagePosts</a></li>
+					<li><a class="goup" href="profile.html" target="if"><span id="username">username</span></a></li>
+					<li><img class="goup" id="usrimg" src="harry.jpg" style="margin:5px;height:39px;border-radius:5px;" onclick="document.getElementById('if').src='profile.html'"></li>
+					<!--li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+					  <ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					  </ul>
+					</li-->
+				</ul>
+			  
+			  
+			  
+			  
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
 	<div style="position:absolute;width:100%;min-height:100%;top:700px;background-color:white"> 
-		<iframe style="width:90%;margin:5%;margin-top:8%;min-height:90%;border:none;" id="if" name ="if" src="index.html">
+		<iframe style="width:90%;margin:5%;margin-top:4%;min-height:90%;border:none;" id="if" name ="if" src="index.html">
 		</iframe>
 	</div>
 		
-		
 	
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+
+	
+	
     
+
+
+
+	
+	<script>
+	
+		abc={
+      minRows: 8                   // specify the minimum rows before creating a new
+                                   // column
+    , maxRows: 25                  // specify the maximum rows in a column
+    , targetColumnSize: 2          // specify the default target column size (it will
+                                   // attempt to create
+                                   // this many columns by default, unless the min/max
+                                   // row rules are not being met)
+    , openFx: "slideDown"          // the fx to use for showing the root menu
+    , openSpeed: 250               // the speed of the openFx
+    , closeFx: "slideUp"           // the fx to use for hiding the root menu
+    , closeSpeed: 250              // the speed of the closeFx
+    , hoverOverDelay: 200          // the delay before opening a submenu
+    , hoverOutDelay: 0             // the delay before closing a submenu
+    , showFx: "show"               // the fx to use when showing a submenu
+    , showSpeed: 0                 // the speed of the showFx
+    , hideFx: "hide"               // the fx to use when closing a submenu
+    , hideSpeed: 0                 // the speed of the hideFx
+    , dropShadow: true             // determine whether drop shadows should be shown
+                                   // on the submenus
+    , autoHeight: true             // always uses the lineHeight options (much faster
+                                   // than calculating height)
+    , lineHeight: 19               // the base height of each list item (li) this is
+                                   // normally calculated
+                                   // automatically, but in some cases the value can
+                                   // not be determined and
+                                   // you will need to set it manually
+    , screenPadding: 10            // the padding to use around the border of the
+                                   // screen -- this is used to make sure items stay
+                                   // on the screen
+    , allowParentSelect: false     // determines if parent items are allowed to be
+                                   // selected (by default
+                                   // only end nodes can be selected)
+    , delim: ":"                   // the delimited to use when showing the display
+                                   // string (must be single character)
+    , showACOnEmptyFocus: false    // show the autocomplete box on focus when input is
+                                   // empty
+    , valueAttr: "innerHTML"             // the attribute that contains the value to use in
+                                   // the hidden field
+    , click: null                  // callback that occurs when the user clicks on a
+                                   // menu item
+    , select: null                 // callback that occurs when a value is selected
+    , init: null                   // callback that occurs when the control is fully
+                                   // initialized
+}
+	
+	
+
+	</script>
+	
+
+
+
 	
 	<script>
 		scflag=false;
@@ -310,11 +456,14 @@
             });
 		$("#but").click(function () {
                 $('body,html').animate({ scrollTop: 0 }, 500);
-				//document.getElementById('if').src='http://'+document.getElementById('category').value;
+				document.getElementById('if').src='http://'+document.getElementById('category').value;
+				//alert(document.getElementById('category').value)
                 return false;
             });
 		$("button").click(function () {
+				scflag=true;
                 $('body,html').animate({ scrollTop: 0 }, 500);
+				
 				//document.getElementById('if').src='http://'+document.getElementById('category').value;
                 return false;
             });
@@ -323,16 +472,44 @@
 				//document.getElementById('if').src='http://'+document.getElementById('category').value;
                 return false;
             });
+		$(".goup").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 500);
+				//document.getElementById('if').src='http://'+document.getElementById('category').value;
+                return false;
+            });
 		$('#category').bind('keypress', function(e) {
 				var code = e.keyCode || e.which;
 				if(code == 13) { //Enter keycode
+					alert(document.getElementById('category').value);
 					$('body,html').animate({ scrollTop: 0 }, 500);
 					document.getElementById('if').src='http://'+document.getElementById('category').value;
 					return false;
 				   //Do something
 			 }});
 		
-		$(document).click(function(){scflag=true;})
+		$('.form-control').bind('keypress', function(e) {
+				var code = e.keyCode || e.which;
+				if(code == 13) { //Enter keycode
+					alert(document.getElementById('category').value);
+					$('body,html').animate({ scrollTop: 0 }, 500);
+					document.getElementById('if').src='http://'+document.getElementById('category').value;
+					return false;
+				   //Do something
+			 }});
+		
+		
+		
+		$('#categorymenu').bind('keypress', function(e) {
+				var code = e.keyCode || e.which;
+				if(code == 13) { //Enter keycode
+					alert(document.getElementById('category').value);
+					$('body,html').animate({ scrollTop: 0 }, 500);
+					document.getElementById('if').src='http://'+document.getElementById('category').value;
+					return false;
+				   //Do something
+			 }});
+		
+		$("body").click(function(){scflag=true;})
 		
 		$(document).ready(function(){
 			//while(true){	
@@ -360,6 +537,11 @@
 		
 		
 		$(document).ready(function(){
+			
+			//list=document.getElementById("");//["Pallal","Health"];
+			//$("#mcdropdown").mcDropdown($("#categorymenu"),opt);
+			//var dd = $("#mcdropdown").mcDropdown();
+			// $("#category").mcDropdown("#categorymenu");
 			//while(true){	
 			setInterval	(function(){
 							setTimeout(function(){$('.notedown').css('top','-=400px');},1);
@@ -378,17 +560,36 @@
 		
 		
 		
+		
+		
+		
 	</script>
-	
+	<script>
+		//$(document).ready(function(){
+	//	$("div.mcdropdown").ready(function(){
+		//for(var i in this)
+			//console.log(i,this[i])
+		
+		//this.attr("innerHTML","rem");});
+	//)}
+	</script>
 	
 	<script>
+		function rem()
+		{	
+			//alert()
+			var a=document.getElementById("remm");
+			var t=a.firstChild;
+			while (t.nodeType!=1)
+			  {
+			  t=t.nextSibling;
+			  }
+			//alert(t.style);
+			t.removeAttribute("style")
+		}
+		
+		
 	
-		var dd = $("#mcdropdown").mcDropdown();
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function (){
-		  $("#category").mcDropdown("#categorymenu");
-		});
 	</script>
 	
 	
@@ -396,13 +597,12 @@
 	<script type="text/javascript" src="engine1/script.js"></script>
 	
 	
-	<script type="text/javascript" src="./lib/jquery-1.2.6.min.js"></script>
-	<script type="text/javascript" src="./lib/jquery.mcdropdown.js"></script>
-	<script type="text/javascript" src="./lib/jquery.bgiframe.js"></script>
+	<!--script type="text/javascript" src="./lib/jquery-1.2.6.min.js"></script-->
 
 <!---// load the mcDropdown CSS stylesheet //--->
-<link type="text/css" href="./css/jquery.mcdropdown.css" rel="stylesheet" media="all" />
-	
+<!-- type="text/css" href="./css/jquery.mcdropdown.css" rel="stylesheet" media="all" /-->
+<link type="text/css" href="./css/jminmc.css" rel="stylesheet" media="all" />
+<!--link type="text/css" href="./css/mccss.css" rel="stylesheet" media="all" /-->
 	<script src="js/bootstrap.min.js"></script>
 
   </body>

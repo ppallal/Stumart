@@ -1,11 +1,10 @@
- <!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    
+    >
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Stumart</title>
+    <title>STUMART Register form </title>
 </head>
-
 <style type="text/css">
     #wrapper {
         width:450px;
@@ -121,67 +120,49 @@
         margin-bottom:3px;
     }
 </style>
-
 <body>
-<div id="wrapper">
-<?php
-               require 'connect.php';
-              
-
-                $secq=mysql_real_escape_string($_GET['secq']);
-                $uid=intval($_GET['n']);
-														
-					echo "<h3>The Security Question is: ";
-					echo  $secq."</h3>";
-					echo "<br/>";
-						
- ?>
-    
-
-        
-
-
-        <form action="http://localhost/Stumart/Login/php/updatepass.php?<?php echo"uid=".$uid?>" method="post">
-        <div >
-            <div class="span3">
-                <h4>  Enter security answer</h4>
-            </div>
-            <div class="span7">
-                <input class="input-small span6" type="text" placeholder="Enter Security answer" name="secans">
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span3">
-                <h4> New Password<br></h4>
-            </div>
-            <div class="span7">
-                <input class="input-small span6" type="password" placeholder="Enter New Password" name="newpass">
-            </div>
-        </div>
-		<div class="row-fluid">
-            <div class="span3">
-                <h4>Confirm  New Password<br></h4>
-            </div>
-            <div class="span7">
-                <input class="input-small span6" type="password" placeholder="Confirm New Password" name="con_newpass">
-            </div>
-        </div>
-        <div class="row-fluid">
-			<div class="span3 offset3">
-                    <input type="submit" name="submit" value="Update Password"/>
-			</div>
-        </div>
-		</form>
-
+    <div id="wrapper">
+        <form action="next.html" method="post">
+            <fieldset>
+                <legend>STUMART Register Form</legend><!--
+                <div>
+                    <input type="text" name="first_name" placeholder="First Name"	tabindex="1" autocomplete="off"/>
+                </div>
+                <div>
+                    <input type="text" name="last_name" placeholder="Last Name" tabindex="2" autocomplete="off"/>
+                </div>
+				<div>
+                    <input type="text" name="usn" placeholder="Enter USN" tabindex="3" autocomplete="off"/>
+                </div>
+				<div>
+                    <input type="email" name="email" placeholder="Email" tabindex="5" autocomplete="off"/>
+                </div>
+				<div>
+                    <input type="tel" name="phoneno" placeholder="Phone Number" tabindex="6" autocomplete="off"/>
+                </div>
+				<div>
+                    Upload Photo<input type="file" name="photo" placeholder="Photo" tabindex="7" autocomplete="off"/>
+                </div>--> 
+				<div>
+                    <input type="text" name="username" placeholder="USERNAME"/>
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password" tabindex="6" autocomplete="off"/>
+                </div>
+				<div>
+                    <input type="password" name="Rpassword" placeholder="Repeat Password" tabindex="7" autocomplete="off"/>
+                </div>
+				<!--
+                <div>
+                    <input type="" name="" placeholder=""/>
+                </div>
+                <div>
+                    <div class="small">this textarea is just for test so you can see the placeholder working on textarea as well</div>
+                    <textarea name="message" placeholder="Message"></textarea>
+                </div>   --> 
+                <input type="submit" name="submit" value="NEXT"/>
+            </fieldset>    
+        </form>
     </div>
-    <!-- /container -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-    </script>
-    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src='main.js'></script>
-
-
 </body>
-
 </html>

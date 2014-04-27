@@ -5,7 +5,7 @@ $username=$_POST["username"];
 //echo $username;
 $password=(md5($_POST["password"]));
 //echo $password;
-$query = "SELECT LoginID FROM login WHERE Username = '{$username}' and Password='{$password}'";
+$query = "SELECT LoginID, IsAdmin FROM login WHERE Username = '{$username}' and Password='{$password}'";
 
                    if($query_run=mysql_query($query))
                   {
@@ -19,10 +19,19 @@ $query = "SELECT LoginID FROM login WHERE Username = '{$username}' and Password=
                         while($query_row=mysql_fetch_assoc($query_run))
                         {
                               $LoginID=$query_row['LoginID'];
-                            
+                              $IsAdmin=$query_row['IsAdmin'];
                         }
 						echo 'Successs!!!';
-							// enter the appropriate page to go to after login
+						if($IsAdmin==0)
+						{
+						// Default redirection
+						}
+						else
+						{
+						//Admin redirection
+						header('Location:adminview.php');
+						}
+						// enter the appropriate page to go to after login
 							//	header('Location:web_edititems.php?n='.$LoginID);
 					}
 				  }
